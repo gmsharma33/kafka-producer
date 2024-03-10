@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.3'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.apache.kafka:kafka-clients:3.0.0'
+
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+	implementation 'org.slf4j:slf4j-api:1.7.32'
+
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+	implementation 'org.slf4j:slf4j-simple:1.7.32'
+
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+	// https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+	implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+
+	// https://mvnrepository.com/artifact/com.launchdarkly/okhttp-eventsource
+	implementation 'com.launchdarkly:okhttp-eventsource:2.5.0'
+
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
